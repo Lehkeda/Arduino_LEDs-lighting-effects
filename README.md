@@ -21,7 +21,7 @@
 **Bugs**
 Report if you found any .
 	
-**Targets are planned for next releases **
+**Targets are planned for next releases**
 
 - Change current effect using push-button .
 - Choose effects from PC .
