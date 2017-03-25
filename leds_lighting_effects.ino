@@ -1,7 +1,6 @@
 /* LEDs lighting effect sketch 
  * Created 2017 - March - 25 
  * By : Hesham Mohamed (LehKeda) 
- * 
  */
 
 /* Global variables */
@@ -11,7 +10,7 @@
  * PWM output pins are (3,5,6,9,10,11) in UNO board 
  * the array should be terminated with 0 value ;
 */
-int led[] = {3,5,6.9,10,11,0}; 
+int led[] = {3,5,6,9,10,11,0}; 
 
 int led_array_lenth;
 int functions_array_lenth;
