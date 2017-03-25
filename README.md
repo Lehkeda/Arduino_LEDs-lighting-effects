@@ -19,6 +19,7 @@
 - You can apply them to 6 different LEDs series (each series connected to PWM pin , the LEDs in that series all will be lit at once ) 
 
 **Bugs**
+
 Report if you found any .
 	
 **Targets are planned for next releases**
