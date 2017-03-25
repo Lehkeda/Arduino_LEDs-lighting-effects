@@ -1,4 +1,4 @@
-#Arduino-LEDs lighting effects version-1.0
+# Arduino-LEDs lighting effects version-1.0
 
 ----------
 
