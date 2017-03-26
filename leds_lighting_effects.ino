@@ -103,10 +103,10 @@ void random_individual_led(){
       // Pointer to current_leds array , will be used to set LEDs will be lit up ; 
       int *ptr=current_leds; 
       
-      // Number of LEDs will be lit 
-      int number_of_leds= random(led_array_lenth);
+      // Number of LEDs groups will be lit 
+      int number_of_leds_groups= random(led_array_lenth+1);
       
-      for (int x=0; x < number_of_leds; x++){
+      for (int x=0; x < number_of_leds_groups; x++){
         *ptr=led[random(led_array_lenth)]; // set LED will be lit up ;
         
         // 255 value makes LED on all time .
