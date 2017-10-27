@@ -10,6 +10,13 @@
  * PWM output pins are (3,5,6,9,10,11) in UNO board 
  * the array should be terminated with 0 value ;
 */
+
+
+/*enum LEDs_effects_id{fade_all_effect,
+                     fade_individual_effect,
+                     random_individual_led_effect,
+                     random_led_group_effect}; */
+                     
 int led[] = {3,5,6,9,10,11,0}; 
 
 int led_array_lenth;
