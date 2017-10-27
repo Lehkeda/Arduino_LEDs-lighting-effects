@@ -132,13 +132,26 @@ void random_individual_led(){
      }
     }
 
+void incremental_turnON_turnOFF_leds(){
+  for(int x=0; x<=10; x++){
+    for (int i=0; i <= led_array_lenth; i++) {
+      analogWrite(led[i],255);
+      delay(70);
+    }
+    for (int i=0; i <= led_array_lenth; i++) {
+      analogWrite(led[i],0);
+      delay(70);
+    }
+  } 
+}    
+
 /* Array of all LEDs lighting effect 
  *  Add the name of function of effect 
  *  you want or you can remove the name 
  *  of function of effect you don't want 
  */
 
-void (*leds_lighting_effects_functions[])()={fade_all,fade_individual, random_individual_led,random_led_groups,0};
+void (*leds_lighting_effects_functions[])()={fade_all,fade_individual, random_individual_led,random_led_groups,incremental_turnON_turnOFF_leds,0};
   
 void get_functions_array_lenth(){
   for(int i=0; leds_lighting_effects_functions[i];i++){
