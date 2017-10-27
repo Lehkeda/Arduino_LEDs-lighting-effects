@@ -15,7 +15,7 @@
 /*enum LEDs_effects_id{fade_all_effect,
                      fade_individual_effect,
                      random_individual_led_effect,
-                     random_led_group_effect}; */
+                     random_led_groups_effect}; */
                      
 int led[] = {3,5,6,9,10,11,0}; 
 
@@ -100,8 +100,8 @@ void random_individual_led(){
     }
   }
 
-// To randomly light group of LEDs
- void random_led_group(){
+// To randomly light up different groups of LEDs
+ void random_led_groups(){
     randomSeed(analogRead(0)); // To shuffle random function 
     for (int i=0; i <=led_array_lenth; i++ ){
       // LEDs will be lit up ;
@@ -138,7 +138,7 @@ void random_individual_led(){
  *  of function of effect you don't want 
  */
 
-void (*leds_lighting_effects_functions[])()={fade_all,fade_individual, random_individual_led,random_led_group,0};
+void (*leds_lighting_effects_functions[])()={fade_all,fade_individual, random_individual_led,random_led_groups,0};
   
 void get_functions_array_lenth(){
   for(int i=0; leds_lighting_effects_functions[i];i++){
