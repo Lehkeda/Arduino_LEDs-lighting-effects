@@ -145,13 +145,56 @@ void incremental_turnON_turnOFF_leds(){
   } 
 }    
 
+void wave_effect(){
+  //run this effect for 20 times
+  for(int x=0; x<=20; x++){
+  //check whether number of LEDs is odd or even
+    if((led_array_lenth % 2)==0){
+      /*  get left led number and decrement it by 1 to get it's proper place in LEDs' pin numbers array
+       *  if led_array_lenth=6
+       *  left_led=6/2 = 3
+       *  in LEDs' pin numbers array LED number is at position no. 2
+       *  so it will be led[left_led-1]
+       *  right_led=left_led+1
+       *  led[right_led-1]
+       */
+      int left_led= (led_array_lenth/2)-1; 
+      int right_led= left_led+1;
+  
+      for(int i=0; i < (led_array_lenth/2); i++){
+        analogWrite(led[left_led-i],255);
+        analogWrite(led[right_led+i],255);
+        delay(125);
+        analogWrite(led[left_led-i],0);
+        analogWrite(led[right_led+i],0);
+        delay(125);
+        }
+    }else{
+      /*  get middle led number 
+       *  if led_array_lenth=5
+       *  middle_led=5/2 = 2 (it ommits fractions so 2.5 will be 2)
+       *  hence we get the correct middle led number in LEDs' pin numbers array
+       */
+      int middle_led= (led_array_lenth/2);
+      for(int i=0; i<=((led_array_lenth-1)/2); i++){
+        analogWrite(led[middle_led-i],255);
+        analogWrite(led[middle_led+i],255);
+        delay(125);
+        analogWrite(led[middle_led-i],0);
+        analogWrite(led[middle_led+i],0);
+        delay(125);
+      } 
+    }
+  }
+}
+
 /* Array of all LEDs lighting effect 
  *  Add the name of function of effect 
  *  you want or you can remove the name 
  *  of function of effect you don't want 
  */
 
-void (*leds_lighting_effects_functions[])()={fade_all,fade_individual, random_individual_led,random_led_groups,incremental_turnON_turnOFF_leds,0};
+void (*leds_lighting_effects_functions[])()={fade_all,fade_individual, random_individual_led,random_led_groups,incremental_turnON_turnOFF_leds,wave_effect,0};
   
 void get_functions_array_lenth(){
   for(int i=0; leds_lighting_effects_functions[i];i++){
@@ -161,7 +204,6 @@ void get_functions_array_lenth(){
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-  
   // First we need to ge the lenth of LEDs array and functions array
   get_led_array_lenth();
   get_functions_array_lenth();
