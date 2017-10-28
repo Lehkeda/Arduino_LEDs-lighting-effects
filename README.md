@@ -2,9 +2,6 @@
 
 ----------
 
-
-![LEDs lighting effects](https://github.com/Lehkeda/Arduino_LEDs-lighting-effects/blob/master/img/IMG_20170325_154503.jpg?raw=true)
-
 **Effects**
 
 - Fade in/out each LED Individually.
